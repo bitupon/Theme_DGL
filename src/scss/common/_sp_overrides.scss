@@ -1,0 +1,23 @@
+#s4-bodyContainer{
+    padding-bottom:0px;
+    height: 100%;
+    #contentRow{
+        #contentBox{
+             .ms-core-tableNoSpace{
+                 width:100%;
+                table{
+                    width:100%;
+                }
+             }         
+        }
+    }    
+}
+
+.ms-webpartzone-cell{
+    margin: 0;
+}
+
+.ui-autocomplete-loading { 
+    background:url('images/ajax-loader.gif') no-repeat right center;
+    background-image: url(images/ajax-loader.gif)!important;
+}

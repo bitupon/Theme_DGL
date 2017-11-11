@@ -1,0 +1,22 @@
+.#{$dgl}{
+	&-panel{
+		$panel:&;
+		border-radius: 0;		
+		box-shadow: none;
+		.panel{
+			&-heading{				
+				border-radius: 0;	
+				&--bordered{
+					border-bottom: solid 3px #e1e1e1;
+				}	
+			}
+
+			&-title{
+				font-weight: 600;
+				line-height: inherit;				
+				font-size: 20px;
+				color: $pri-color!important;
+			}
+		}
+	}
+}

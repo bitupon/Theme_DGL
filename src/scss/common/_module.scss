@@ -1,0 +1,34 @@
+.#{$dgl}-module{
+	padding: 15px;
+    margin-bottom: 20px;
+	&__header{
+		color: #525c68;
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	&__content{
+		padding: 10px 0;
+	}
+
+	&--brd-t{
+		border-top:solid 1px #ddd;
+	}
+
+	&--brd-r{
+		border-right:solid 1px #ddd;
+	}
+
+	&--brd-l{
+		border-left:solid 1px #ddd;
+	}
+
+	&--brd-b{
+		border-bottom:solid 1px #ddd;
+		&:after{
+			content: "";
+			display: block;
+			
+		}
+	}
+}

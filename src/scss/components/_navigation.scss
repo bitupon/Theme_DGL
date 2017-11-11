@@ -1,0 +1,180 @@
+.#{$dgl}{
+	&-navigation{
+		$nav:&;
+		@extend #list;
+		font-family: 'Roboto', sans-serif;
+		
+		&:after{
+		    content: "";
+			display: block;
+			clear: both;
+		}
+
+		> li{
+			position: relative;
+			float: left;	
+
+			&:hover{			
+
+				> #{$nav}__menu{
+					display: block;
+				}
+			}			
+		}
+
+		&__item{
+		    display: inline-block;
+			padding: 11px 20px;
+			color: #565a65;
+			text-decoration: none;			
+			font-size: 16px;
+    		text-transform: uppercase;
+
+			&:hover{
+				color:#c91119 !important;			
+			}
+
+			&.active{
+				color:#c91119 !important;
+			}
+
+					
+		}
+
+		&__menu{
+			$navMenu:&;
+			display: none;
+			position: absolute;			
+			top:42px;
+			background-color: #dddee0;
+			border-top: solid 2px $sec-color;
+			width:200px;
+			@extend #ellipsis;
+			z-index: 10;
+			@extend #list;
+
+			#{$navMenu}-item{
+				display: block;
+				padding:10px 20px;
+				color: inherit;
+				cursor: pointer;
+				transition: all $tr-medium;
+				&:hover{
+					background-color: #d0d1d4;
+					color:$pri-color;
+				}
+			}
+			
+		}
+
+		&--settings{
+			#{$nav}__item{
+				padding: 0px 14px;				
+				font-size: 11px;
+   				letter-spacing: 1px;
+				border-right: solid 1px #ccc;
+				text-transform: uppercase;
+
+				&--brless{
+					border-right: none;	
+				}
+						
+			}
+
+			li{
+				&:last-child{
+					#{$nav}__item{
+						border-right: none;		
+						padding-right: 0;							
+					}
+				}
+				
+			}
+		}
+
+		&-top{
+			height: 40px;
+		}
+
+		&-bottom{
+			height: 60px;
+		}
+
+		.ms-core-listMenu-horizontalBox{
+			line-height: normal;
+		}
+
+		.ms-core-listMenu-root {
+			@extend #list;
+			line-height: normal;
+			> li{
+				line-height: 1;
+				a{
+					float: left;
+				}
+			}
+			ul.static{
+				@extend #list;
+				li.static{
+					position: relative;
+					float: left;
+				}
+			}
+
+			.ms-core-listMenu-item{
+				display: inline-block;
+				padding: 11px 20px;
+				color: #565a65;
+				text-decoration: none;			
+				font-size: 16px;
+				text-transform: uppercase;
+				border: none!important;
+    			margin-right: 0!important;
+				font-weight: 400;
+
+				&:hover{
+					color:#c91119 !important;			
+				}
+
+				&.active,&.ms-core-listMenu-selected{
+					font-weight: 400;
+					color:#c91119 !important;
+				}
+
+				+ ul{
+					&.dynamic{
+						$navMenu:&;
+						//display: none;
+						//position: absolute;			
+						//top:42px;
+						background-color: #dddee0;
+						border-top: solid 2px $sec-color;
+						width: auto!important;
+						box-shadow: none;
+						@extend #ellipsis;
+						//z-index: 10;
+						@extend #list;
+						> li{
+							.ms-core-listMenu-item {	
+								display: block;							
+								padding:10px 20px;
+								color: inherit;
+								cursor: pointer;
+								font-size: 14px;
+    							text-transform: capitalize;
+								float: none;
+								transition: all $tr-medium;
+								&:hover{
+									background-color: #d0d1d4;
+									color:$pri-color;
+								}
+							}							
+						}	
+					}
+				}
+			}
+		}
+
+	}
+
+}

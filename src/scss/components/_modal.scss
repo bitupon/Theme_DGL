@@ -1,0 +1,24 @@
+.#{$dgl}-modal{
+
+    &__dialog{
+        &--md{
+            width:1000px;
+        }
+    }
+    &__content{
+        border-radius: 0;
+    }
+
+    &__header{
+        border: none;
+        text-transform: uppercase;
+    }
+
+    &__body{
+        
+    }
+
+    &__footer{
+        background: #e1e1e1;
+    }
+}

@@ -1,0 +1,442 @@
+<div id="bidPackages"></div>
+<div id="bidPackageNotes"></div>
+<div id="bidPackageVendors"></div>
+<!--Start: Bid Packages Templates-->
+<script type="text/html" id="tmpBidPackages">
+     <!--Start: Panel -->
+    <div class="dgl-panel panel m-b-0">
+        <div class="panel-heading panel-heading--bordered p-x-0">							
+            <h3 class="panel-title">
+                {%= data.Title %}</span>&nbsp;(<span>{%= data.Status %}</span>)
+                <span class="pull-right">
+                    <button type="button" id="editPackage" class="btn btn btn--secondary"><i class="fa fa-pencil m-r-1" aria-hidden="true"></i>Edit</button>
+                </span>
+            </h3>
+        </div>
+        <div class="panel-body p-x-0">
+                
+            <table class="dgl-table table table-bordered">                        
+                <tbody> 
+                    <tr><td>Release Date</td><td> <strong>{%= data.ReleaseDate %}</strong></td> </tr> 
+                    <tr><td>Acknowledgement Due Date</td> <td> <strong>{%= data.AcknowledgementDueDate %}</strong></td> </tr> 
+                    <tr><td>Due Date</td><td> <strong>{%= data.DueDate %}</strong></td> </tr> 
+                </tbody> 
+            </table>
+            
+        </div>
+    </div>
+    <!--End: Panel -->
+
+     <!--Start: Panel -->
+    <div class="dgl-panel panel m-b-0">
+        <div class="panel-heading panel-heading--bordered p-x-0">							
+            <h3 class="panel-title">
+                Services Requested              
+            </h3>
+        </div>
+        <div class="panel-body p-x-0">                
+            {% if (data.ServicesRequested.length <= 0) { %}
+                <div class="col-md-4">
+                    No Service Requested
+                </div>
+            {% }  %}
+            <div class="row">
+            {% _.each(data.ServicesRequested, function(item, key, list) { %}
+                <div class="col-sm-6 col-md-3">
+                    <i class="fa fa-tag"></i>&nbsp;<span class="service-requested" id="{%= item.termGuid %}">{%= item.label %}</span>
+                </div>
+            {% });%}       
+            </div>         
+        </div>
+    </div>
+    <!--End: Panel -->
+
+
+
+    <!--<div class="row bid-package-header">
+        <div class="col-md-10">
+            <h3><span>{%= data.Title %}</span>&nbsp;(<span>{%= data.Status %}</span>)</h3>
+        </div>
+        <div class="col-md-2">
+            <button type="button" id="editPackage" class="btn btn-success twenty-margin-top pull-right">Edit</button>
+        </div>
+    </div>
+    <div class="row bid-package-item">
+        <div class="col-md-4">
+            Release Date
+        </div>
+        <div class="col-md-8">
+            <strong>{%= data.ReleaseDate %}</strong>
+        </div>
+    </div>
+    <div class="row bid-package-item ten-padding-top">
+        <div class="col-md-4">
+            Acknowledgement Due Date
+        </div>
+        <div class="col-md-8">
+            <strong>{%= data.AcknowledgementDueDate %}</strong>
+        </div>
+    </div>
+    <div class="row bid-package-item ten-padding-top">
+        <div class="col-md-4">
+            Due Date
+        </div>
+        <div class="col-md-8">
+            <strong>{%= data.DueDate %}</strong>
+        </div>
+    </div>-->
+
+    <!--<div class="row bid-package-header">
+        <div class="col-md-12">
+            <h3>Services Requested</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        {% if (data.ServicesRequested.length <= 0) { %}
+        <div class="col-md-4">
+            No Service Requested
+        </div>
+        {% }  %}
+        {% _.each(data.ServicesRequested, function(item, key, list) { %}
+        <div class="col-md-4">
+            <i class="fa fa-tag"></i>&nbsp;<span class="service-requested" id="{%= item.termGuid %}">{%= item.label %}</span>
+        </div>
+        {% });%}-->
+    </div>
+</script>
+<!--End: Bid Packages Templates-->
+
+<!--Start: Bid Package Notes Templates-->
+<script type="text/html" id="tmpBidPackageNotes">
+     <!--Start: Panel -->
+    <div class="dgl-panel panel m-b-0">
+        <div class="panel-heading panel-heading--bordered p-x-0">							
+            <h3 class="panel-title">
+               Publish Notes            
+            </h3>
+        </div>
+        <div class="panel-body p-x-0">                
+            {% if (data.length <= 0) { %}
+                <div class="row">
+                    <div class="col-md-12">
+                        No Notes
+                    </div>
+                </div>
+            {% }  %}
+            <ul class="dgl-list kr-list--details dgl-list--brdless list-group m-a-0">
+                 {% _.each(data, function(item, key, list) { %}
+                    <li class="dgl-list__item list-group-item p-a-0">
+                        <div class="dgl-list__body dgl-list__body--max">											
+                            <div class="dgl-list__content">
+                                <div class="dgl-comment">
+                                    <div class="dgl-comment__profile">
+                                        <img src="{%= item.Picture %}"/>
+                                    </div>
+                                    <div class="dgl-comment__details m-t-2">
+                                        <div class="dgl-comment__info">
+                                            <span class="dgl-comment__info-user">{%= item.Name %},</span>
+                                            <span class="dgl-comment__info-time">added about <span>{%= item.Created %}</span> ago</span>
+                                        </div>
+                                        <p class="dgl-comment__desc">
+                                            {%= item.Note %}
+                                        </p>
+                                    </div>													
+                                </div>												
+                            </div>
+                        </div>                    
+                    </li>                    
+                {% });%}
+            
+            </ul>            
+        </div>
+    </div>
+    <!--End: Panel -->
+
+
+<!--
+    <div class="row bid-package-header">
+        <div class="col-md-12">
+            <h3>Publish Notes</h3>
+        </div>
+    </div>
+    {% if (data.length <= 0) { %}
+    <div class="row">
+        <div class="col-md-12">
+            No Notes
+        </div>
+    </div>
+    {% }  %}
+    {% _.each(data, function(item, key, list) { %}
+        <div class="row">
+            <div class="col-md-1">
+                <img class="img-circle img" src="{%= item.Picture %}" />
+            </div>
+            <div class="col-md-10 ten-padding-top">
+                <b>{%= item.Name %}, </b>
+                <span>added about </span>
+                <span>{%= item.Created %}</span>
+                <span> ago</span>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        </div>
+        <div class="row bid-package-item">
+            <div class='col-md-offset-1 col-md-10'>
+                <small>{%= item.Note %}</small>
+            </div>
+            <div class='col-md-1'>
+            </div>
+        </div>
+    {% });%}-->
+</script>
+<!--End: Bid Package Notes Templates-->
+<!--Start : Vendor Templates-->
+<script type="text/html" id="tmpBidPackageVendors">
+     <!--Start: Panel -->
+    <div class="dgl-panel panel m-b-0">
+        <div class="panel-heading panel-heading--bordered p-x-0">							
+            <h3 class="panel-title">
+                Vendor Contacts  
+                <span class="pull-right">                
+                    <button type="button" id="addVendorDisplay" class="btn btn--secondary" onclick="DGL.Project.BidPackages.addVendorModal()"><i class="fa fa-plus m-r-1" aria-hidden="true"></i>Add Vendor</button>
+                </span>
+            </h3>
+        </div>
+        <div class="panel-body p-x-0">                
+            {% if(Object.keys(data.contacts).length > 0){ _.each(data.contacts, function(value, key, list) { %}
+            <div class="row">
+                {% if(data.status != "Awarded"){ %}
+                <div class="col-md-1">
+                    <input class="vendor-contact" type="checkbox" id="{%= key %}" name="{%= value.detail.eMail %}" />
+                </div>
+                {% } %}
+                <div class="col-md-1 zero-padding text-center">
+                    {% if(value.status == "Published"){ %}
+                    <i class="fa fa-send"></i>
+                    <br />
+                    <small>{%= value.publishHistory[(value.publishHistory.length - 1)] %}</small>
+                    {% } else if(data.status == "Awarded" && value.status == "Awarded"){ %}
+                    <i class="fa fa-trophy"></i>
+                    <br />
+                    <small>{%= value.awardDate %}</small>
+                    {% } %}
+                </div>
+                <div class="col-md-6">
+                    <strong>{%= value.detail.fullName %}</strong>&nbsp;<i>({%= value.detail.parentAccount %})</i>&nbsp;<strong>{%= value.detail.eMail %}</strong>
+                    <br />
+                    <span>{%= value.detail.phone %}</span>
+                    <br />
+                    <span>{%= value.detail.address %}</span>&nbsp;<span>{%= value.detail.city %}</span>&nbsp;<span>{%= value.detail.state %}</span>&nbsp;<span>{%= value.detail.zip %}</span>
+                </div>
+                <div class="col-md-4">
+                    <span class="pull-right">
+                        {% if(data.status == "Published" && value.status == "Published"){ %}
+                        <button type="button" class="btn" id="{%= key %}" onclick="DGL.Project.BidPackages.showPublishHistory('{%= key %}')">History</button>
+                        {% } %}               
+                        {% if(data.status == "Published" && value.status == "Published"){ %}
+                        <button type="button" class="btn" id="{%= key %}" name="{%= value.detail.eMail %}" onclick="DGL.Project.BidPackages.awardContact('{%= key %}', '{%= value.detail.eMail %}')">Award</button>
+                        {% } %}
+                    </span>
+                </div>
+            </div>
+            {% }); %}
+            <div class="row">
+                <div class="col-md-12">
+                    {% if(data.status == "Open"){ %}
+                    <button type="button" class="btn pull-right" {%=data.disabled %} onclick="DGL.Project.BidPackages.publishBidPackageModal()">Publish</button>
+                    {% } else if(data.status == "Published"){ %}
+                    <button type="button" class="btn pull-right" {%=data.disabled %} onclick="DGL.Project.BidPackages.publishBidPackageModal()">Re-Publish</button>
+                    {% } %}
+                </div>
+            </div>
+            {% } else { %}
+            <div class="row">
+                <div class="col-md-12">
+                    No Contacts
+                </div>
+            </div>
+            {% } %}                  
+        </div>
+    </div>
+    <!--End: Panel -->
+
+
+    <!--<div class="row bid-package-header">
+        <div class="col-md-10">
+            <h3>Vendor Contacts</h3>
+        </div>
+        <div class="col-md-2">
+            <button type="button" id="addVendorDisplay" class="btn btn-success twenty-margin-top pull-right" onclick="DGL.Project.BidPackages.addVendorModal()">Add Vendor</button>
+        </div>
+    </div>-->
+   
+</script>
+<!--End : Vendor Templates-->
+
+<!--Start : Vendor Capabilities Templates-->
+<script type="text/html" id="tmpBidPackageVendorCapabilities">
+    <div class="row">
+        <div class="col-md-2">
+            <h5>Capability</h5>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                {% if (data.length <= 0) { %}
+                <div class="col-md-12 zero-padding">
+                    No Capabilities
+                </div>
+                {% }  %}
+                {% _.each(data, function(item, key, list) { %}
+                <div class="col-md-6 zero-padding">
+                    {% if (item.vendorCapable) { %}
+                    <input type="checkbox" name="{%= item.label %}" id="{%= item.termGuid %}" value="{%= item.label %}" checked disabled />&nbsp;{%= item.label %}
+                    {% } else { %}
+                    <input type="checkbox" class="active-vendor-capability" name="{%= item.label %}" id="{%= item.termGuid %}" value="{%= item.label %}" />&nbsp;{%= item.label %}
+                    {% }  %}
+                </div>
+                {% });%}
+            </div>
+        </div>
+    </div>
+</script>
+<!--End : Vendor Capabilities Templates-->
+<!--Start : Vendor Contacts Templates-->
+<script type="text/html" id="tmpBidPackageVendorContacts">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th class="col-md-2"></th>
+                        <th class="col-md-5">Name</th>
+                        <th class="col-md-5">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if (data.length <= 0) { %}
+                    <tr>
+                        <td class="col-md-12" colspan="3">No Contacts</td>
+                    </tr>
+                    {% }  %}
+                    {% _.each(data, function(item, key, list) { %}
+                    <tr>
+                        {% if (item.eMail && item.userEnsured) {  if (item.contactAdded) { %}
+                        <td class="col-md-1"><input type="checkbox" id="{%= item.key %}" checked disabled /></td>
+                        {% } else { %}
+                        <td class="col-md-1"><input type="checkbox" vendor-name="{%= item.vendorName %}" vendor-id="{%= item.vendorId %}" id="{%= item.key %}" class="active-vendor-contact" /></td>
+                        {% } } else { %}
+                        <td class="col-md-1"></td>
+                        {% } %}
+
+                        <td class="col-md-5">{%= item.fullName %}</td>
+
+                        {% if (item.userEnsured) { %}
+                        <td class="col-md-6">{%= item.eMail %}</td>
+                        {% } else{  %}
+                        <td class="col-md-6 red">{%= item.eMail %}</td>
+                        {% } %}
+                    </tr>
+                    {% });%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</script>
+<!--End : Vendor Contacts Templates-->
+<!--Start: Publish History Templates-->
+<script type="text/html" id="tmpBidPackagePublishHistory">
+    
+    <table class="dgl-table table table-bordered">                        
+        <tbody> 
+        {% _.each(data, function(element, index, list) { %}
+              <tr><td>{%= element %}</td> </tr> 
+        {% });%}            
+        </tbody> 
+    </table>
+</script>
+<!--End: Publish History Templates-->
+
+
+<!--Start: Add Vendor Modal-->
+<div id="addVendorModal" class="dgl-modal modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!--Modal content-->
+        <div class="dgl-modal__content modal-content">
+            <div class="dgl-modal__header modal-header">
+                <h4 class="modal-title">Add Vendor Contact</h4>               
+            </div>
+            <div class="dgl-modal__body modal-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label class="control-label" for="vendor-name">Vendor:</label>
+                    </div>
+                    <div class="col-md-8 input-group">
+                        <input type="text" class="form-control" id="vendorName" placeholder="Enter Vendor Name">
+                        <span class="input-group-addon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+                <br />
+                <section id="bidPackageVendorCapabilities"></section>
+                <br />
+                <section id="bidPackageVendorContacts"></section>
+            </div>
+            <div class="dgl-modal__footer modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn--secondary" id="btnAddVendor" onclick="DGL.Project.BidPackages.addVendor()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End:Add Vendor Modal-->
+
+<!--Start Publish Package Modal-->
+<div id="publishBidPackage" class="dgl-modal modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!--Modal content-->
+        <div class="dgl-modal__content modal-content">
+            <div class="dgl-modal__header modal-header">
+                <h4 class="modal-title">Publish Bid Package</h4>               
+            </div>           
+            <div class="dgl-modal__body modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <textarea class="form-control" placeholder="Enter publishing Notes..." id="publishingNotes"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="dgl-modal__footer modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn--secondary" onclick="DGL.Project.BidPackages.publishBidPackage()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End :Publish Package Modal-->
+
+<!--Publish History Modal-->
+<div id="publishHistoryModal" class="dgl-modal modal fade" role="dialog">
+    <div class="dgl-modal__dialog modal-dialog">
+        <!--Modal content-->
+        <div class="dgl-modal__content modal-content">
+             <div class="dgl-modal__header modal-header">
+                <h4 class="modal-title">Publish History</h4>               
+            </div>             
+            <div class="dgl-modal__body modal-body">
+                <section id="bidPackagePublishHistory"></section>
+            </div>
+            <div class="dgl-modal__footer modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Publish History Modal-->
+<!--End: Vendor Templates-->
+<script type="text/javascript">
+    document.write('<script src="' + _spPageContextInfo.siteAbsoluteUrl + '/Style%20Library/projects/widgets/bid-packages/bid-packages.js"></scr' + 'ipt>');
+</script>
+

@@ -1,0 +1,11 @@
+.#{$dgl}-table{
+    thead{
+        background-color: #ddd;
+    }
+
+    &__tr{
+        &--highlight{
+            background-color: #eee;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.#{$dgl}{
+	&-carousel{
+        $carousel:&;
+        height:350px;
+        margin-bottom: 30px;
+
+        .carousel{
+            &-inner{
+                height: 100%;
+                border: solid 1px #f1f1f1;
+                .item{
+                    height:100%;
+                    img{
+                        @include square(100%);
+                    }
+                }
+            }
+            &-control{
+                position: absolute;                   
+                z-index: 1000;
+                top:40%;
+                height: 60px;
+                line-height: 60px;
+                width: 30px;
+                background-color: rgba(0,0,0,0.4);
+                color: #fff;
+                cursor:pointer;
+                &.left{
+                    border-top-right-radius: 100px;
+                    border-bottom-right-radius: 100px;
+                    left:0;
+                    padding-left: 6px;
+                    left:1px;
+                }
+                &.right{
+                    border-top-left-radius: 100px;
+                    border-bottom-left-radius: 100px;
+                    right:0;
+                    text-align: right;
+                    padding-right: 6px;
+                    right: 1px;
+                }
+
+                .glyphicon{
+                    font-size: 16px;
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+            &-indicators{
+                bottom: -35px;
+
+                li{
+                    @include square(12px);
+                    margin:0;
+                    background-color: #ccc;
+
+                    &.active{
+                        background-color: #862632;
+                    }
+                }
+            }
+
+            &-caption{                
+                padding: 0;
+                text-align: left;
+                left: 40px;
+                text-shadow: none;
+                &__title{
+                    font-size: 25px;
+
+                }
+
+                &__desc{
+                    font-size: 12px;
+                }
+            }
+        }
+
+        
+    }
+}

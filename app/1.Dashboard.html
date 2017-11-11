@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DGL - Dashboard</title>
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">	
+	<link rel="stylesheet" href="libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>	
+	<script src="libs/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>	
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+	<main class="dgl-main">
+		<!-- Start: KR Header-->
+		<header class="dgl-header">
+			<div class="dgl-header__body">
+				<div class="dgl-header__logo">
+					<img src="assets/logo.png" alt="logo">
+				</div>
+				<div class="dgl-header__content">
+					<div class="dgl-navigation-top">
+						<ul class="dgl-navigation dgl-navigation--settings pull-right p-t-2">
+							<li>
+								<a id="ctl00_intranetHome" class="dgl-navigation__item" href="https://dennisgroup.sharepoint.com/"><i class="fa fa-home m-r-1" aria-hidden="true"></i>Home</a>
+							</li>
+							<li>
+								<a id="ctl00_helpDesk" class="dgl-navigation__item" href="#"><i class="fa fa-question-circle m-r-1" aria-hidden="true"></i>Help Desk</a>
+							</li>                                        
+							<li>
+								<a id="ctl00_crmNavigation" class="dgl-navigation__item" href="https://dennisgroup.sharepoint.com/sites/crm"><i class="fa fa-users m-r-1" aria-hidden="true"></i>CRM</a>
+							</li>
+							<li>
+								<a id="ctl00_projectsNavigation" class="dgl-navigation__item" href="https://dennisgroup.sharepoint.com/sites/projects"><i class="fa fa-line-chart m-r-1" aria-hidden="true"></i>Projects</a>
+							</li>
+							<li class="hoverSelector">
+								<a class="dgl-navigation__item">My Team Sites</a>
+								<ul class="teamsites hoverSelectorBlock"></ul>
+							</li>
+								<li>
+									<div class="search-wrapper">
+										
+									</div>
+								</li>
+							<li>
+								<div class="input-group input-group--sm input-group--sm-w m-l-2">								
+									<input type="text" class="form-control" id="exampleInputAmount" placeholder="Search">
+									<div class="input-group-addon"><button><i class="fa fa-search" aria-hidden="true"></i></button></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="dgl-navigation-bottom">
+						<ul class="dgl-navigation pull-right p-t-3">
+							<li><a  class="dgl-navigation__item active" href="1.Dashboard.html">Dashboard</a></li>
+							<li>
+								<a href="2.Report.html" class="dgl-navigation__item">Project Schedules <i class="fa fa-angle-down m-r-1" aria-hidden="true"></i></a>
+								<ul class="dgl-navigation__menu">
+									<li><a class="dgl-navigation__menu-item" href="#">Site Photos</a></li>
+									<li><a class="dgl-navigation__menu-item" href="#">List</a></li>						
+									<li><a class="dgl-navigation__menu-item" href="#">Procurement</a></li>
+									<li><a class="dgl-navigation__menu-item" href="#">Tiles</a></li>
+									<li><a class="dgl-navigation__menu-item" href="#">Carousel</a></li>
+								</ul>
+							</li>
+							<li><a href="" class="dgl-navigation__item">Site Photos</a></li>
+							<li><a href="" class="dgl-navigation__item">Lists</a></li>
+							<li><a href="" class="dgl-navigation__item">Procurement</a></li> 
+							<li><a href="" class="dgl-navigation__item">Drawings</a></li>
+							<li><a href="" class="dgl-navigation__item">Documents</a></li>
+						</ul>
+
+
+						<!--<div class="dgl-navigation ms-core-navigation ms-dialogHidden">                                        
+							<div class=" noindex ms-core-listMenu-horizontalBox">
+								<ul class="root ms-core-listMenu-root static">
+									<li class="static selected"><a class="static selected menu-item ms-core-listMenu-item ms-displayInline ms-core-listMenu-selected ms-navedit-linkNode" href="/sites/davidTest/Pages/Home.aspx" accesskey="1"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">TODO-12345</span><span class="ms-hidden">Currently selected</span></span></a><ul class="static">
+										<li class="static dynamic-children"><span class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Documents</span></span></span><ul class="dynamic" style="z-index: 1100;">
+											<li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/DailyReports.aspx" dropid="0" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Daily Reports</span></span></a></li><li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/Specifications.aspx" dropid="1" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Specifications</span></span></a></li><li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/SharedDocuments.aspx" dropid="2" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Shared Documents</span></span></a></li><li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/MeetingMinutes.aspx" dropid="3" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Meeting Minutes</span></span></a></li>
+										</ul></li><li class="static dynamic-children"><span class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Drawings</span></span></span><ul class="dynamic" style="z-index: 1100;">
+											<li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/SharedDrawings.aspx" dropid="4" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Shared Drawings</span></span></a></li><li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/ReleasedDrawings.aspx" dropid="5" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Released Drawings</span></span></a></li><li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/VendorDrawings.aspx" dropid="6" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Vendor Drawings</span></span></a></li>
+										</ul></li><li class="static"><a class="static ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/SitePhotos.aspx" dropid="7" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Site Photos</span></span></a></li><li class="static dynamic-children"><span class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Procurement</span></span></span><ul class="dynamic">
+											<li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/PurchaseCommitments.aspx" dropid="8" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Purchase Commitments</span></span></a></li><li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/EWAs.aspx" dropid="9" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Extra Work Authorizations</span></span></a></li>
+										</ul></li><li class="static"><a class="static ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/ProjectSchedules.aspx" dropid="10" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Project Schedules</span></span></a></li><li class="static dynamic-children"><span class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Lists</span></span></span><ul class="dynamic">
+											<li class="dynamic"><a class="dynamic ms-quicklaunch-dropNode menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode ms-droppable" onepagenavigationaction="1" href="/sites/davidTest/Pages/Equipment.aspx" dropid="11" aria-dropeffect="move"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Equipment</span></span></a></li><li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" href="/sites/davidTest/Pages/OutstandingIssues.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Outstanding Issues</span></span></a></li>
+										</ul></li>
+									</ul></li>
+								</ul>
+							</div>							
+						</div>
+						-->
+					</div>					
+				</div>
+			</div>
+			
+		</header>
+		<!-- End: KR Header-->
+
+		<!-- Start: Main Content-->
+		<div class="dgl-content">
+			<!--Start: KR PageLayout -->
+			<div class="dgl-page p-t-2">
+				<ul class="dgl-breadcrumbs m-b-2">					
+					<li>Project Number 00034</li>  
+					<li>Daily Report 1321321</li>
+				</ul>
+				<div class="row">
+					<div class="col-md-8">	
+						<!--Start: Carousel -->
+						<div id="dgl-carousel" class="dgl-carousel carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#dgl-carousel" data-slide-to="0" class="active"></li>
+								<li data-target="#dgl-carousel" data-slide-to="1"></li>
+								<li data-target="#dgl-carousel" data-slide-to="2"></li>
+								<li data-target="#dgl-carousel" data-slide-to="3"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img src="assets/slider-1.jpg" alt="...">
+									<div class="carousel-caption">
+										<div class="carousel-caption__title">Emet sit magna</div>
+										<div class="carousel-caption__desc">Lorem Ipsum Description</div>
+									</div>
+								</div>
+								<div class="item">
+									<img src="assets/slider-2.jpg" alt="...">
+									<div class="carousel-caption">
+										<div class="carousel-caption__title">Emet sit magna</div>
+										<div class="carousel-caption__desc">Lorem Ipsum Description</div>
+									</div>
+								</div>
+								<div class="item">
+									<img src="assets/slider-3.jpg" alt="...">
+									<div class="carousel-caption">
+										<div class="carousel-caption__title">Emet sit magna</div>
+										<div class="carousel-caption__desc">Lorem Ipsum Description</div>
+									</div>
+								</div>
+								<div class="item">
+									<img src="assets/slider-4.jpg" alt="...">
+									<div class="carousel-caption">
+										<div class="carousel-caption__title">Emet sit magna</div>
+										<div class="carousel-caption__desc">Lorem Ipsum Description</div>
+									</div>
+								</div>
+								
+							</div>
+
+							<!-- Controls -->
+							<a class="left carousel-control" href="#dgl-carousel" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#dgl-carousel" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>	
+						<!--End: Carousel -->
+					</div>
+
+					<div class="col-md-4">
+						<!--Start: Panel -->
+						<div class="dgl-panel panel m-b-0">
+							<div class="panel-heading panel-heading--bordered p-x-0  p-t-0">							
+								<h3 class="panel-title">Daily  Report</h3>
+							</div>
+							<div class="panel-body p-x-0 p-t-0">
+								<section class="dgl-module m-b-0 p-x-0 p-b-0">
+									<div class="row">
+										<div class="col-md-12">
+											<section class="form-horizontal">
+												<div class="form-group">
+													<label for="textProject" class="col-sm-4 control-label">Report number</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="textProject" >
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="textLocation" class="col-sm-4 control-label">Report by</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="textLocation" >
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="textReport" class="col-sm-4 control-label">Date</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="textReport" >
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="textDate" class="col-sm-4 control-label">Person on Site</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="textDate" >
+													</div>
+												</div>	
+												<div class="form-group">
+													<label for="textDate" class="col-sm-4 control-label">Daily Hours</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="textDate" >
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="textDate" class="col-sm-4 control-label">Genral Note</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="textDate" >
+													</div>
+												</div>	
+												<div class="form-group">
+												
+													<div class="col-md-offset-4 col-sm-8">
+														<button class="btn btn--secondary btn-block">Create Daily report</button>
+													</div>
+												</div>								
+											</section>
+										</div>
+										
+									</div>
+								</section>
+							
+								
+								
+							</div>
+						</div>
+						<!--End: Panel -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<!--Start: Panel -->
+						<div class="dgl-panel panel">
+							<div class="panel-heading panel-heading--bordered p-x-0">							
+								<h3 class="panel-title">My Open Issues</h3>
+							</div>
+							<div class="panel-body">
+								<ul class="dgl-list kr-list--details dgl-list--brdless list-group m-a-0">
+									<li class="dgl-list__item list-group-item p-x-0">
+										<div class="dgl-list__body">
+											<header class="dgl-list__header">
+												<h2 class="dgl-list__title dgl-list__title--danger">Active<span class="pull-right"></span></h2>												
+											</header>
+											<div class="dgl-list__content">
+												Suspendisse feugiat vel nisl a tempo
+											</div>
+										</div>
+										<div class="dgl-list__nav">
+											<i class="fa fa-chevron-right fa--clickable" aria-hidden="true"></i>
+										</div>
+									</li>
+									<li class="dgl-list__item list-group-item p-x-0">
+										<div class="dgl-list__body">
+											<header class="dgl-list__header">
+												<h2 class="dgl-list__title dgl-list__title--danger">Active<span class="pull-right"></span></h2>												
+											</header>
+											<div class="dgl-list__content">
+												Praesent at semper elit, sed egestas tellus. Morbi commodo odio ut ipsum imperdiet congue.Nulla fermentum cursus rutrum. Sed vitae elit risus. Duis sollicitudin scelerisque augue. Praesent ultricies.
+											</div>
+										</div>
+										<div class="dgl-list__nav">
+											<i class="fa fa-chevron-right fa--clickable" aria-hidden="true"></i>
+										</div>
+									</li>
+									<li class="dgl-list__item list-group-item p-x-0">
+										<div class="dgl-list__body">
+											<header class="dgl-list__header">
+												<h2 class="dgl-list__title dgl-list__title--danger">Active<span class="pull-right"></span></h2>												
+											</header>
+											<div class="dgl-list__content">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptate dignissimos dolorem tempore illo nesciunt fugit exercitationem excepturi, nobis sit ratione saepe, quas quibusdam nostrum ullam odio, aspernatur dolores, architecto.
+											</div>
+										</div>
+										<div class="dgl-list__nav">
+											<i class="fa fa-chevron-right fa--clickable" aria-hidden="true"></i>
+										</div>
+									</li>
+								</ul>
+					
+							</div>
+						</div>
+						<!--End: Panel -->
+
+							<!--Start: Panel -->
+						<div class="dgl-panel panel">
+							<div class="panel-heading panel-heading--bordered p-x-0">							
+								<h3 class="panel-title">My Open Issues</h3>
+							</div>
+							<div class="panel-body p-a-0">
+								<ul class="dgl-list kr-list--details dgl-list--brdless list-group m-a-0">
+									<li class="dgl-list__item list-group-item p-x-0">
+										<div class="dgl-list__body dgl-list__body--max">											
+											<div class="dgl-list__content">
+												<div class="dgl-comment">
+													<div class="dgl-comment__profile">
+														<img src="./assets/profile-pic.png"/>
+													</div>
+													<div class="dgl-comment__details m-t-2">
+														<div class="dgl-comment__info">
+															<span class="dgl-comment__info-user">Bitupon,</span>
+															<span class="dgl-comment__info-time">added two hours ago</span>
+														</div>
+														<p class="dgl-comment__desc">
+															Suspendisse feugiat vel nisl a tempo
+														</p>
+													</div>													
+												</div>												
+											</div>
+										</div>
+									
+									</li>
+									<li class="dgl-list__item list-group-item p-x-0">
+										<div class="dgl-list__body dgl-list__body--max">											
+											<div class="dgl-list__content">
+												<div class="dgl-comment">
+													<div class="dgl-comment__profile">
+														<img src="./assets/profile-pic.png"/>
+													</div>
+													<div class="dgl-comment__details m-t-2">
+														<div class="dgl-comment__info">
+															<span class="dgl-comment__info-user">Bitupon,</span>
+															<span class="dgl-comment__info-time">added two hours ago</span>
+														</div>
+														<p class="dgl-comment__desc">
+															Suspendisse feugiat vel nisl a tempo
+														</p>
+													</div>													
+												</div>												
+											</div>
+										</div>
+									</li>
+									<li class="dgl-list__item list-group-item p-x-0">
+										<div class="dgl-list__body dgl-list__body--max">											
+											<div class="dgl-list__content">
+												<div class="dgl-comment">
+													<div class="dgl-comment__profile">
+														<img src="./assets/profile-pic.png"/>
+													</div>
+													<div class="dgl-comment__details m-t-2">
+														<div class="dgl-comment__info">
+															<span class="dgl-comment__info-user">Bitupon,</span>
+															<span class="dgl-comment__info-time">added two hours ago</span>
+														</div>
+														<p class="dgl-comment__desc">
+															Suspendisse feugiat vel nisl a tempo
+														</p>
+													</div>													
+												</div>												
+											</div>
+										</div>
+									</li>
+								</ul>
+					
+							</div>
+						</div>
+						<!--End: Panel -->
+
+						<!--Start: Panel -->
+						<div class="dgl-panel  panel">							
+							<div class="panel-body p-x-0">
+								<div class="row">
+									<div class="col-md-4">
+											<section class="dgl-block">
+											<div class="dgl-block__header">Drawings</div>
+											<div class="dgl-block__body">
+												<div class="fs-lg c-success">0 New</div>
+											</div>
+										</section>
+									</div>
+
+									<div class="col-md-4">
+											<section class="dgl-block">
+											<div class="dgl-block__header">Shared Documents</div>
+											<div class="dgl-block__body">
+												<div class="fs-lg c-success">0 Added</div>
+											</div>
+										</section>
+									</div>
+
+									<div class="col-md-4">
+											<section class="dgl-block">
+											<div class="dgl-block__header">Purchase Commitments</div>
+											<div class="dgl-block__body">
+												<div class="fs-lg c-success">0 Pending</div>
+											</div>
+										</section>
+									</div>
+								</div>		
+								<div class="row">
+									<div class="col-md-4">
+											<section class="dgl-block">
+											<div class="dgl-block__header">EWA Logs</div>
+											<div class="dgl-block__body">
+												<div class="fs-lg c-danger">1 Pending</div>
+											</div>
+										</section>
+									</div>
+
+									<div class="col-md-4">
+											<section class="dgl-block">
+											<div class="dgl-block__header">Issues</div>
+											<div class="dgl-block__body">
+												<div class="fs-lg c-danger">1 Open</div>
+											</div>
+										</section>
+									</div>
+								</div>		
+							</div>
+						</div>
+						<!--End: Panel -->						
+					</div>
+										
+				</div>
+			</div>
+			<!--End: KR PageLayout -->
+		</div>		
+		<!-- End: Main Content-->
+	</main>
+	<script>
+		$(document).ready(function(){
+			
+
+			$('#dgl-carousel').carousel({
+				interval: 2000
+			})
+
+		})
+	</script>
+</body>
+</html>
+
+

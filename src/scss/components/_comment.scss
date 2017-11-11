@@ -1,0 +1,39 @@
+.#{$dgl}-comment{
+    &:after{
+        @extend #after-clear;
+    }
+    &__profile{
+       display: inline-block;   			
+        @include square(80px);
+        float: left;
+
+        img{
+            @include square(100%);
+            border-radius: 100%;
+        }
+    }
+
+    &__details{
+        display: inline-block;   			
+        width: calc(100% - 80px);
+        padding-left: 10px;
+        float: left;
+    }
+
+    &__info{
+        &-user{
+            font-weight: 600;
+            color:$pri-color;	
+        }   
+        &-time{
+            font-weight: 100;
+        } 
+    }
+    
+    &__desc{
+        margin: 0;
+        padding: 10px 0;
+    }
+
+}
+

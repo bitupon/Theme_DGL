@@ -1,0 +1,19 @@
+.#{$dgl}-icn{
+    margin-right: 10px;
+
+    &--clickable{
+        cursor:pointer;
+    }
+    
+    &--o{
+        border: solid 2px #fff;
+        padding: 8px;
+        border-radius: 20px;
+    }
+}
+
+.fa{
+    &--clickable{
+        cursor:pointer;
+    }
+}

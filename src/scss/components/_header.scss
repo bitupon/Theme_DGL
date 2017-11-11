@@ -1,0 +1,39 @@
+/* 
+ * * * _header.scss
+ * * *
+ */
+
+.#{$dgl}-header{
+     border-bottom: solid 1px #dddee0;
+     height: 100px;
+     //padding: 0 25px;
+     background: #fff;
+
+    &__body{
+        width: 1280px;
+        margin: auto; 
+        padding: 0px 25px;
+    }   
+
+    &__content{
+        display: inline-block;
+        width: calc(100% - 150px);
+        float: left;
+        height: 100%;             
+        &:after{
+            @extend #after-clear;
+        }
+    }
+
+    &__logo{
+        display: inline-block;
+        float: left;
+        width: 150px;
+        height: 80px;
+        margin: 10px 0;
+       
+        img{
+            @include square(100%);
+        }
+    }
+}

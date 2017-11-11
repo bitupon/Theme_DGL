@@ -1,0 +1,30 @@
+
+@import "common/variables";
+@import "common/mixins";
+
+html,body{
+	padding: 0;
+	margin:0;
+	font-size:14px;
+	color:  $f-color!important;
+	font-family: 'Roboto', sans-serif;
+	height:100%;
+	width:100%;
+	//background: #f2f2f2;
+}
+
+h1,h2,h3,h4,h5{
+	color:  $f-color!important;
+}
+
+a{
+	&:hover,&:visited{
+		text-decoration: none;
+		//color:initial;
+	}
+
+	&:visited,&:active{
+		color:  $f-color!important;
+	}
+}
+

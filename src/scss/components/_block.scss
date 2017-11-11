@@ -1,0 +1,23 @@
+.#{$dgl}-block{
+	background-color: #eaebec;
+	padding:0 5px;
+	margin-bottom: 15px;
+
+	&__header{
+		color:$pri-color;		
+	    font-size: 16px;
+	    font-weight: 600;
+	    padding: 10px;
+	    border-bottom: solid 2px #d0d1d4;
+
+	    .fa{
+	    	margin-right: 10px;
+    		vertical-align: initial;
+	    }
+	}
+
+	&__body{
+		padding: 15px 10px;
+		min-height: 100px;
+	}
+}

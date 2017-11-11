@@ -1,0 +1,27 @@
+.#{$dgl}{
+	&-tile{
+		&-wrapper{	
+			&:after{
+				@extend #after-clear;
+			}
+		}
+		@include square(130px);
+		display: inline-block;  
+		background-color: #dddee0;   		  
+    	float: left;
+		margin: 0 15px 15px 0;
+		cursor:pointer;
+		transition: all  $tr-medium;
+		&:hover{
+			//background-color: #515b65;
+		}
+
+		img{
+			@include square(100%);
+			opacity: 0.8;
+			&:hover{
+				opacity: 1;
+			}
+		}
+	}	
+}
